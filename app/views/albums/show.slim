@@ -1,0 +1,5 @@
+= link_to "Atrás" ,  albums_path
+
+ul
+  - photos.each do |photo|
+    li= image_tag photo.image.url(:thumb)

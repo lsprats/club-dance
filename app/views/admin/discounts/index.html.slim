@@ -1,0 +1,32 @@
+h1.title-section
+  span Lista de descuentos
+  = link_to 'Nuevo descuento', new_admin_discount_path, class: 'btn green action'
+
+table.table
+  thead
+    tr
+      th #
+      th Título
+      th Descripción
+      th Cantidad
+      th Imagen
+      th Fecha de inicio
+      th Fecha de fin
+      th Porcentaje
+      th colspan="4" Acciones
+
+  tbody
+    - collection.each do |discount|
+      tr
+        td = discount.id
+        td = discount.title
+        td = discount.description
+        td = discount.count
+        td = image_tag discount.image.url(:thumb)
+        td = discount.date_ini_value
+        td = discount.date_end_value
+        td = discount.percent
+        td = link_to 'Ver', [:admin, discount], class: 'btn small green'
+        td = link_to 'Editar', edit_admin_discount_path(discount), class: 'btn small orange'
+        td = link_to 'Destroy', [:admin, discount], method: :delete, data: { confirm: 'Estás seguro' }, class: 'btn small red'
+

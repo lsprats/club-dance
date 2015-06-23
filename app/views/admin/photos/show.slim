@@ -1,0 +1,10 @@
+h1.title-section
+  span
+    |Foto&nbsp;#
+    = photo.id
+  .actions
+    = link_to 'Volver', admin_album_photos_path(album, photo), class: 'btn green action'
+
+.show-item
+  .row.img
+    = image_tag(photo.image.url(:original))

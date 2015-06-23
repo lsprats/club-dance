@@ -1,0 +1,18 @@
+h1.title-section
+  span = resource.title
+  .actions
+    = link_to 'Volver', admin_events_path, class: 'btn green action'
+    = link_to 'Editar', edit_admin_event_path(resource), class: 'btn orange action'
+    = link_to 'Eliminar', admin_event_path(resource), method: :delete, data: { confirm: 'Estás seguro?' }, class: 'btn green red action'
+
+.show-item
+  .row
+    strong Descripción:&nbsp;
+    = resource.description
+  .row
+    strong Álbum:&nbsp;
+    - if resource.album
+      = resource.album.name
+    - else
+      |No se ha seleccionado un álbum
+

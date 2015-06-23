@@ -1,0 +1,15 @@
+h1.title-section
+  span Subir foto
+  = link_to 'Volver', admin_albums_path, class: 'btn green action'
+
+= form_for([:admin, album, @photo], html: { class: 'form' }) do |f|
+
+  .fields
+    .field
+      = f.label 'Seleccione una imagen o mutiples imagenes'
+      = f.file_field :image, multiple: true
+
+  .actions
+    .action
+      = f.submit "Enviar"
+

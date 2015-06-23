@@ -1,0 +1,113 @@
+.full-background
+  i.icon-down
+
+h1
+  span Los mejores eventos para tu fin de semana están en:
+  = image_tag('logo.png', alt: "Titanium")
+
+= render 'shared/application/header'
+
+.slider
+  .swiper-container
+    .swiper-wrapper
+      - sliders.each do |slider|
+        .swiper-slide
+          = image_tag slider.image.url(:original)
+
+/ Events
+section
+  .inner-container
+    = link_to events_path, class: 'link-to-section' do
+      h2 Eventos
+      i.icon-next
+
+    .items
+      - events.each do |event|
+        = link_to event_path(event), class: 'item' do
+
+          .item-image
+            = image_tag event.image.url(:original)
+
+          .item-content
+            .item-title
+              = event.title
+            .item-description
+              = event.description
+            .item-date
+              span Inicia:&nbsp;
+              strong = event.date_init_value
+              br
+              span Finaliza&nbsp;
+              strong = event.date_end_value
+
+    .wrapper-btn
+      = link_to 'Ver todos', events_path, class: 'btn pink'
+
+/ Discounts
+section
+  .inner-container
+    = link_to discounts_path, class: 'link-to-section' do
+      h2 Descuentos
+      i.icon-next
+
+    .items.discounts
+      - discounts.each do |discount|
+
+        .discount
+          = link_to discount_path(discount), class: 'item' do
+
+            .item-discount
+              = discount.percent.to_i
+              |%
+            .item-image
+              = image_tag discount.image.url(:original)
+            .item-content
+              .item-date
+                span Finaliza&nbsp;
+                strong = discount.date_end
+
+          .content
+            .item-title
+              = discount.title
+            .item-description
+              = discount.description
+            .item-description.item-share
+              span Compartir descuento:
+              ul
+                li
+                  a href="#"
+                    i.icon-facebook
+                  a href="#"
+                    i.icon-twitter
+                  a href="#"
+                    i.icon-linkedin
+
+
+    .wrapper-btn
+      = link_to 'Ver todos', discounts_path, class: 'btn pink'
+
+/ Blog
+section
+  .inner-container
+    = link_to blog_articles_path, class: 'link-to-section' do
+      h2 Blog
+      i.icon-next
+
+    .items.articles
+      - articles.each do |article|
+        = link_to blog_article_path(article), class: 'item' do
+
+          .item-image
+            /= image_tag article.image.url(:original)
+
+          .item-content
+            .item-title
+              = article.title
+            .item-description
+              = article.description
+
+    .wrapper-btn
+      = link_to 'Ver blog', blog_articles_path, class: 'btn pink'
+/ .title
+/  - 10000.times do
+/     |Lorem

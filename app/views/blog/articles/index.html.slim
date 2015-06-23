@@ -1,0 +1,24 @@
+.l-home.l-section.l-blog
+  section
+    .inner-container
+      = link_to blog_articles_path, class: 'link-to-section' do
+        h2 Blog
+        i.icon-next
+
+      .items
+        - articles.each do |article|
+          = link_to blog_article_path(article), class: 'item' do
+
+            .item-image
+              / = image_tag article.image.url(:original)
+
+            .item-content
+              .item-title
+                = article.title.truncate(30)
+              .item-description
+                = article.description
+              .item-description
+                = article.content.truncate(30)
+
+      .wrapper-pagination
+        = will_paginate articles

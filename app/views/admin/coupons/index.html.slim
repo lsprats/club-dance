@@ -1,0 +1,16 @@
+h1.title-section
+  span Lista de cupones
+  .actions
+    = link_to 'Volver', discounts_path, class: 'btn green action'
+    / = link_to 'Nuevo cupon', new_admin_article_path, class: 'btn green action'
+
+table.table
+  thead
+    tr
+      th #
+      th Código
+      th colspan="2" Acciones
+  tbody
+    - coupons.each do |coupon|
+      tr
+        td = coupon.code

@@ -1,0 +1,32 @@
+h1.title-section
+  span Lista de eventos
+  = link_to 'Nuevo evento', new_admin_event_path, class: 'btn green action'
+
+table.table
+  thead
+    tr
+      th #
+      th Imagen
+      th Título
+      th Descripción
+      th Fecha de inicio
+      th Fecha de fin
+      th Album
+      th colspan="4" Acciones
+
+  tbody
+    - collection.each do |event|
+      tr
+        td = event.id
+        td = image_tag event.image.url(:thumb)
+        td = event.title
+        td = event.description
+        td = event.date_init_value
+        td = event.date_end_value
+        td = event.album.name if event.album
+        td = link_to 'Ver fotos',admin_album_photos_path(event), class: 'btn small blue'
+        td = link_to 'Ver evento', [:admin, event], class: 'btn small green'
+        td = link_to 'Edit', edit_admin_event_path(event), class: 'btn small orange'
+        td = link_to 'Destroy', [:admin, event], method: :delete, data: { confirm: 'Estás seguro' }, class: 'btn small red'
+
+

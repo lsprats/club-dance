@@ -1,0 +1,23 @@
+h1.title-section
+  span Lista de artículos
+  = link_to 'Nuevo artículo', new_admin_article_path, class: 'btn green action'
+
+table.table
+  thead
+    tr
+      th #
+      th Titulo
+      th Descripción
+      th Contenido
+      th colspan="3" Acciones
+
+  tbody
+    - collection.each do |article|
+      tr
+        td = article.id
+        td = article.title
+        td = article.description
+        td = article.content
+        td = link_to 'Ver', admin_article_path(article.id), class: 'btn small green'
+        td = link_to 'Editar', edit_admin_article_path(article), class: 'btn small orange'
+        td = link_to 'Eliminar', admin_article_path(article), method: :delete, data: { confirm: 'Estás seguro?' }, class: 'btn small red'

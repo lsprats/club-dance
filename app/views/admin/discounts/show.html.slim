@@ -1,0 +1,28 @@
+h1.title-section
+  span = resource.title
+  .actions
+    = link_to 'Volver', admin_discounts_path, class: 'btn green action'
+    = link_to 'Ver cupones', admin_discount_coupons_path(resource), class: 'btn blue action'
+    = link_to 'Editar', edit_admin_discount_path(resource), class: 'btn orange action'
+
+.show-item
+  .row
+    strong Descripción:&nbsp;
+    = resource.description
+  .row
+    strong Cantidad:&nbsp;
+    = resource.count
+  .row
+    strong Image:&nbsp;
+    = image_tag resource.image.url(:thumb)
+  .row
+    strong Date init:&nbsp;
+    = resource.date_ini_value
+  .row
+    strong Date end:&nbsp;
+    = resource.date_end_value
+  .row
+    strong Percent:&nbsp;
+    = resource.percent
+
+

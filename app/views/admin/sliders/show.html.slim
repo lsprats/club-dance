@@ -1,0 +1,13 @@
+h1.title-section
+  span
+    = resource.title
+  .actions
+    = link_to 'Volver', admin_sliders_path, class: 'btn green action'
+
+.show-item
+  .row
+    strong Url:&nbsp;
+    = resource.url
+  .row.img
+    = image_tag resource.image.url
+    /= image_tag(photo.image.url(:original))

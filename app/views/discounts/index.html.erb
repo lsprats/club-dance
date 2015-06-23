@@ -1,0 +1,36 @@
+<h1>Listing Discounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Count</th>
+      <th>Image</th>
+      <th>Fecha de inicio</th>
+      <th>Fecha de fin</th>
+      <th>Percent</th>
+      <th>Expired</th>
+
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% discounts.each do |discount| %>
+      <tr>
+        <td><%= discount.title %></td>
+        <td><%= discount.description %></td>
+        <td><%= discount.count %></td>
+        <td><%= image_tag discount.image.url(:thumb) %></td>
+        <td><%= discount.date_ini_value %></td>
+        <td><%= discount.date_end_value %></td>
+        <td><%= discount.percent %></td>
+        <td><%= discount.expired? ? 'SI' : 'NO' %></td>
+        <td><%= link_to 'Show', [discount] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

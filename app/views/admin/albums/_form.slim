@@ -1,0 +1,21 @@
+= form_for([:admin, @album], html: { class: 'form' }) do |f|
+  - if @album.errors.any?
+   #error_explanation
+      h2
+        = pluralize(@admin_album.errors.count, "error")
+        |prohibited this admin_album from being saved:
+      ul
+        - @admin_album.errors.full_messages.each do |message|
+          li
+            = message
+  .fields
+    .field
+      = f.label :name, 'Nombre'
+      = f.text_field :name
+    .field
+      = f.label :description, 'Descripción'
+      = f.text_field :description
+
+  .actions
+    .action
+      = f.submit

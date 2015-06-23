@@ -1,0 +1,12 @@
+h1.title-section
+  span = @album.name
+  .actions
+    = link_to 'Volver', admin_albums_path, class: 'btn green action'
+    = link_to 'Subir fotos', new_admin_album_photo_path(@album), class: 'btn blue action'
+    = link_to 'Editar', edit_admin_album_path(@album), class: 'btn orange action'
+
+.show-item
+  .row
+    strong Descripción:&nbsp;
+    = @album.description
+

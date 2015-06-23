@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= discount.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= discount.description %>
+</p>
+
+<p>
+  <strong>Count:</strong>
+  <%= discount.count %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag discount.image.url(:thumb) %>
+</p>
+
+<p>
+  <strong>Date init:</strong>
+  <%= discount.date_ini_value %>
+</p>
+
+<p>
+  <strong>Date end:</strong>
+  <%= discount.date_end_value %>
+</p>
+
+<p>
+  <strong>Percent:</strong>
+  <%= discount.percent %>
+</p>
+
+
+<%= link_to 'get coupon', new_discount_coupon_path(discount) %>
+<%= link_to 'Back', discounts_path %>

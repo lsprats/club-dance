@@ -1,0 +1,17 @@
+.sidebar
+  .sidebar-user
+    = current_admin.email
+  .sidebar-navigation
+    .sidebar-block
+      h2 NAVEGACIÓN
+      ul id="js-pages-list"
+        li data-page="articles"
+          = link_to 'Articulos', admin_articles_path
+        li data-page="events"
+          = link_to 'Eventos', admin_events_path
+        li data-page="discounts"
+          = link_to 'Descuentos / Cupones', admin_discounts_path
+        li data-page="albums"
+          = link_to 'Albums / Fotos', admin_albums_path
+        li data-page="sliders"
+          = link_to 'Carrusel de imágenes', admin_sliders_path

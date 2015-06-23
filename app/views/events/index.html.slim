@@ -1,0 +1,27 @@
+.l-home.l-section
+  section
+    .inner-container
+      = link_to events_path, class: 'link-to-section' do
+        h2 Eventos
+        i.icon-next
+
+      .items
+        - events.each do |event|
+          = link_to event_path(event), class: 'item' do
+
+            .item-image
+              = image_tag event.image.url(:original)
+
+            .item-content
+              .item-title
+                = event.title
+              .item-description
+                = event.description
+              .item-date
+                span Inicia:&nbsp;
+                strong = event.date_init_value
+                br
+                span Finaliza&nbsp;
+                strong = event.date_end_value
+
+

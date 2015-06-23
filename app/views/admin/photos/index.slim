@@ -1,0 +1,27 @@
+h1.title-section
+  span Lista de fotos
+  .actions
+    td = link_to 'Volver', admin_albums_path, class: 'btn green action'
+    = link_to 'Subir fotos', new_admin_album_photo_path(album), class: 'btn blue action'
+
+
+- if photos.count > 0
+  table.table
+    thead
+      tr
+        th #
+        th Foto
+        th colspan="2" Acciones
+
+    tbody
+      - photos.each do |photo|
+        tr
+          td = photo.id
+          td
+            = link_to admin_album_photo_path(album, photo)
+              = image_tag photo.image.url(:thumb)
+          td = link_to 'Ver', admin_album_photo_path(album, photo), class: 'btn small green'
+          td = link_to 'Eliminar', admin_album_photo_path(album, photo), method: :delete,  data: { confirm: 'Estás seguro?' }, class: 'btn small red'
+
+- else
+  |No hay fotos aún

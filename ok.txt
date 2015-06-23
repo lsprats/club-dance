@@ -1,0 +1,15 @@
+Tres secciones 
+ 
+   Eventos --> event
+   
+   Album de fotos -->album
+
+   noticias --> blog
+
+   Cupones de descuentos
+
+   Colores a usar lilas y azules  --> frontend
+
+   Enviar cv al mail del boliche -> para busqueda de empleo
+
+   Panel de admin ->admins

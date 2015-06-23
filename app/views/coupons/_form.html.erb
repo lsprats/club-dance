@@ -1,0 +1,5 @@
+<%= form_for([discount, Coupon.new]) do |f| %>
+  <div class="actions"><br>
+    <%= f.submit :onclick => "return confirm('Confirma Cupon?')" %>
+  </div>
+<% end %>

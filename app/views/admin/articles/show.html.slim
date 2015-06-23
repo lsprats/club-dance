@@ -1,0 +1,15 @@
+h1.title-section
+  span = resource.title
+  .actions
+    = link_to 'Volver', admin_articles_path, class: 'btn green action'
+    = link_to 'Editar', edit_admin_article_path(resource), class: 'btn orange action'
+    = link_to 'Eliminar', admin_article_path(resource), method: :delete, data: { confirm: 'Estás seguro?' }, class: 'btn green red action'
+
+.show-item
+  .row
+    strong Descripción:&nbsp;
+    = resource.description
+  .row
+    strong Contenido:&nbsp;
+    = resource.content
+

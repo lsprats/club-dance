@@ -1,0 +1,29 @@
+<h1>Listing Coupons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Code</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% current_user.coupons.each do |coupon| %>
+      <tr>
+        <td><%= coupon.discount.title %></td>
+        <td><%= coupon.code %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+<%= link_to 'Back', discounts_path %>
+
+
+
+<%= link_to "Cerrar session", destroy_user_session_path, method: :delete, data: {confirm: "Seguro?"} %>

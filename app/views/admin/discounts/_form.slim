@@ -1,0 +1,37 @@
+= form_for([:admin, resource], html: { class: 'form' }) do |f|
+  - if resource.errors.any?
+   #error_explanation
+      h2
+        = pluralize(resource.errors.count, "error")
+        |prohibited this admin_album from being saved:
+      ul
+        - resource.errors.full_messages.each do |message|
+          li
+            = message
+
+  .fields
+    .field
+      = f.label :title, 'Título'
+      = f.text_field :title
+    .field
+      = f.label :description, 'Descripción'
+      = f.text_field :description
+    .field
+      = f.label :count, 'Cantidad'
+      = f.text_field :count
+    .field
+      = f.label :date_ini, 'Fecha de inicio'
+      = f.datetime_local_field :date_ini
+    .field
+      = f.label :date_end, 'Fecha de fin'
+      = f.datetime_local_field :date_end
+    .field
+      = f.label :image, 'Imagen'
+      = f.file_field :image
+    .field
+      = f.label :percent, 'Porcentaje'
+      = f.text_field :percent
+
+  .actions
+    .actions
+      = f.submit

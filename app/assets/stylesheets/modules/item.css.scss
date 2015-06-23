@@ -1,0 +1,67 @@
+.item {
+  border: 1px solid $C_LIGHT_GRAY;
+  display: block;
+  font-family: $S_FONT;
+  color: $C_DARK_PURPLE;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.11);
+  position: relative;
+
+  .item-image {
+    height: 250px;
+    overflow: hidden;
+  }//.item-image
+
+  .item-content {
+    padding: 25px 10px 15px;
+  }//.item-content
+
+  .item-title {
+    font-size: 2em;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    font-weight: 700;
+  }//.item-title
+
+  .item-description {
+    font-size: 1.5em;
+    padding: 0 0 10px;
+  }//.item-description
+
+  .item-date {
+    font-size: 1.5em;
+  }//.item-date
+
+  .item-discount {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    top: -30px;
+    right: -30px;
+    background-color: $C_SOFT_PURPLE_2;
+    color: $C_WHITE;
+    font-size: 2.3em;
+    border-radius: 60px;
+    padding: 17px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.29);
+
+    &.v2 {
+      position: absolute;
+      top: auto;
+      height: 100px;
+      width: 100px;
+      margin-top: 83px;
+      right: -50px;
+      background-color: #BA68C8;
+      color: #FFF;
+      font-size: 3.5em;
+      border-radius: 60px;
+      padding: 26px 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.29);
+    }//.item-discount.v2
+
+  }//.item-discount
+
+}//.item
