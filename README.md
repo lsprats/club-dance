@@ -13,7 +13,7 @@ Quick start
 If you satisfy all the dependencies you can clone the repository via git:
 
 ```
-$ git@gitlab.com:nicocedron/club-dance.git
+$ git@github.com:lsprats/club-dance.git
 
 ```
 
